@@ -1,0 +1,31 @@
+{% extends 'layout.html' %}
+
+{% block title %}Profile{% endblock %}
+
+{% block content %}
+<h2>Account Summary Page</h2>
+{% for account in accounts %}
+<div>
+    <p>Your account details are below:</p>
+  
+   
+    
+    
+    <table>
+        <tr>
+            <td>Username:</td>
+            <td>{{ account[1] }}</td>
+        </tr>
+        <tr>
+            <td>Password:</td>
+            <td>{{ account[2] }}</td>
+        </tr>
+        <tr>
+            <td>Email:</td>
+            <td>{{ account[3] }}</td>
+        </tr>
+    </table>
+</div>
+{% endfor %}
+      
+{% endblock %}
