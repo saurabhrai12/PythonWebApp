@@ -38,7 +38,10 @@ def login():
             session['id'] = account[0]
             session['username'] = account[1]
             # Redirect to home page
-            return redirect(url_for('profile'))
+            if account[1] == 'customer':
+                return redirect('/useradmin')
+            else :
+                return redirect(url_for('profile'))
             #return 'Logged in successfully!'
         else:
             # Account doesnt exist or username/password incorrect
