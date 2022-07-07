@@ -38,7 +38,10 @@ def login():
             session['id'] = account[0]
             session['username'] = account[1]
             # Redirect to home page
-            return redirect(url_for('profile'))
+            if account[1] == 'customer':
+                return redirect('/useradmin')
+            else :
+                return redirect(url_for('profile'))
             #return 'Logged in successfully!'
         else:
             # Account doesnt exist or username/password incorrect
@@ -71,6 +74,15 @@ def profile():
         return render_template('profile.html',len = len(accounts), accounts=accounts)
     # User is not loggedin redirect to login page
     return redirect(url_for('login'))
+
+@app.route('/info/<id>')
+def info(id):
+    print(id)
+    cursor = conn.cursor()
+    cursor.execute('SELECT * FROM holdings WHERE golden_id = %s', (id,))
+    user_info = cursor.fetchall()
+    print(len(user_info))
+    return render_template('profile.html',len = len(user_info), accounts=user_info)
 
 
 # http://localhost:5000/python/logout - this will be the logout page

@@ -57,7 +57,7 @@ $(document).ready(function(){
                                 {% for row in employee %}
                                 <tr>
                                     <td data-pk="{{row[0]}}">{{row[0]}}</td>
-                                    <td data-name="name" class="name" data-type="text" data-pk="{{row[0]}}">{{row[1]}}</td>
+                                    <td data-name="name" class="name" data-type="text" data-pk="{{row[0]}}"><a href="info/{{row[0]}}">{{row[1]}}</a></td>
                                     <td data-name="email" class="email" data-type="text" data-pk="{{row[0]}}">{{row[2]}}</td>
                                     <td data-name="phone" class="phone" data-type="text" data-pk="{{row[0]}}">{{row[3]}}</td>
                                     <td data-name="score" class="name" data-type="text" data-pk="{{row[0]}}">{{row[4]}}</td>
