@@ -64,8 +64,9 @@ def home():
 @app.route('/pythonlogin/profile')
 def profile():
     # Check if user is loggedin
-    if 'loggedin' in session:
+    if  session['loggedin']:
         # We need all the account info for the user so we can display it on the profile page
+        print('hello')
         cursor = conn.cursor()
         cursor.execute('SELECT * FROM holdings WHERE golden_id = %s', (session['id'],))
         accounts = cursor.fetchall()
@@ -82,7 +83,7 @@ def info(id):
     cursor.execute('SELECT * FROM holdings WHERE golden_id = %s', (id,))
     user_info = cursor.fetchall()
     print(len(user_info))
-    return render_template('profile.html',len = len(user_info), accounts=user_info)
+    return render_template('userDetail.html',len = len(user_info), accounts=user_info)
 
 
 # http://localhost:5000/python/logout - this will be the logout page

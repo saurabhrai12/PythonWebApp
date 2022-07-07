@@ -6,7 +6,7 @@
     -moz-osx-font-smoothing: grayscale;
 }
 body {
-    background-color: #435165;
+    background-color: #65435e;
     margin: 0;
 }
 .login, .register {
@@ -132,6 +132,7 @@ body.loggedin {
     margin: 25px 0;
     padding: 25px;
   background-color: #fff;
+  
 }
 .content > p table td, .content > div table td {
   padding: 5px;
@@ -145,3 +146,4 @@ body.loggedin {
   padding: 5px;
   margin: 0 0 10px 0;
 }
+

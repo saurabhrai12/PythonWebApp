@@ -1,4 +1,4 @@
-{% extends 'layout.html' %}
+{% extends 'layoutUser.html' %}
 
 {% block title %}User Management{% endblock %}
 
@@ -6,7 +6,7 @@
   <head>
     <meta name="viewport" content="width=device-width">
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Customer Services Review Screen</title>
+        <title>Customer Data Validation</title>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" /> 
         <script src="https://cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js"></script>
@@ -37,18 +37,18 @@ $(document).ready(function(){
     </head>
    
         <div class="container">
-            <h3 align="center">Customer Services Review Screen</h3>
+            <h3 align="center">Customer Data Validation</h3>
             <br />
             <div class="panel panel-default">
-                <div class="panel-heading">Matched Customers</div>
+                <div class="panel-heading">Matching Customers</div>
                 <div class="panel-body">
                     <div class="table-responsive">
                         <table id="sample_data" class="table table-bordered table-striped">
                             <thead>
                                 <tr>
                                     <th>ID</th>
-                                    <th>CDB Number</th>
-                                    <th>Member Code</th>
+                                    <th>Retail Client Identifier</th>
+                                    <th>WI Client Identifier</th>
                                     <th>Is Same</th>
                                     <th>Score</th>
                                 </tr>
