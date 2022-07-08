@@ -4,11 +4,24 @@
 
 {% block content %}
 <h2>Account Summary Page</h2>
+{% set count = 1 %}
+{% set Recount = 1 %}
+{% set WIcount = 1 %}
 {% for account in accounts %}
+{% if account[0] == 'Retail' %} 
+    {% set Recount = Recount + 1 %} 
+{% elif account[0] == 'WI' %}
+    {% set WIcount = WIcount + 1 %}
+{% else %}
+    {% set count = count + 1 %}
+{% endif %}
+
+{% if account[0] == 'Retail' or account[0] == 'WI' %} 
 <div>
     <p>Your account details are below:</p>
    
     <table>
+{% else %}
         <tr> <th>Account Identifier:</th>
             <th>Account Number:</th>
             <th>Account Type:</th>
@@ -25,7 +38,7 @@
             <td>{{ account[2] }}</td>
             <td>{{ account[3] }}</td>
         </tr>
-        
+{% endif %}        
 
     </table>
 </div>
