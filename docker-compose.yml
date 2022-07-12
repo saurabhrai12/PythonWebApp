@@ -9,7 +9,7 @@ services:
       POSTGRES_DB: bookstore
       POSTGRES_USER: root
     ports:    # Set up ports exposed for other containers to connect to
-      - 5433:5432
+      - 5432:5432
     networks:
       - app-tier
     volumes:
@@ -22,6 +22,8 @@ services:
       dockerfile: Dockerfile
     depends_on:
       - postgres_db
+    ports:    # Set up ports exposed for other containers to connect to
+      - 5000:5000
     networks:
       - app-tier
     command:

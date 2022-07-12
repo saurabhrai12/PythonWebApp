@@ -4,7 +4,7 @@ import psycopg2
 
 #establishing the connection
 conn = psycopg2.connect(
-   database="bookstore", user='root', password='password', host='localhost', port= '5433'
+   database="bookstore", user='root', password='password', host='localhost', port= '5432'
 )
 
 
