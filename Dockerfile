@@ -23,4 +23,4 @@ COPY . /app
 
 # During debugging, this entry point will be overridden. For more information, please refer to https://aka.ms/vscode-docker-python-debug
 #CMD [ "python3", "-m" , "flask", "run", "--host=0.0.0.0"]
-CMD ["python3", "--bind", "0.0.0.0:5000", "app:app"]
+CMD ["python3", "app.py"]

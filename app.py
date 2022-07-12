@@ -4,7 +4,7 @@ import psycopg2
 
 #establishing the connection
 conn = psycopg2.connect(
-   database="bookstore", user='root', password='password', host='localhost', port= '5432'
+   database="bookstore", user='root', password='password', host='postgres_db', port= '5432'
 )
 
 
@@ -148,4 +148,4 @@ def updateemployee():
         return json.dumps({'status':'OK'})
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(host="0.0.0.0",debug=True)
